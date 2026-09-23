@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MagicGarment: Benchmarking Single-Image Standalone 3D Garment Reconstruction.">
+  <meta name="keywords" content="MagicGarment, 3D Garment, Single-Image Reconstruction, Benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MagicGarment: Benchmarking Single-Image Standalone 3D Garment Reconstruction</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css?v=20260923-structure">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">MagicGarment: Benchmarking Single-Image Standalone 3D Garment Reconstruction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Jia Chen<sup>1,2†</sup>,</span>
+            <span class="author-block">Ruyang Zhao<sup>1†</sup>,</span>
+            <span class="author-block">Jun Bai<sup>3*</sup>,</span>
+            <span class="author-block">Chao Huang<sup>1</sup>,</span>
+            <span class="author-block">Saishang Zhong<sup>1</sup>,</span>
+            <span class="author-block">Xinrong Hu<sup>1</sup></span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Computer Science and Artificial Intelligence, Wuhan Textile University, Wuhan 430200, China</span>
+            <span class="author-block"><sup>2</sup>Engineering Research Center of Hubei Province for Clothing Information, Wuhan Textile University, Wuhan 430200, China</span>
+            <span class="author-block"><sup>3</sup>School of Computer Science, McGill University, Montreal, QC H3A 0E9, Canada</span>
+          </div>
+
+          <div class="is-size-6 publication-authors author-notes">
+            <span class="author-block"><sup>*</sup>Corresponding author.</span>
+            <span class="author-block"><sup>†</sup>Equal contribution.</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Single-image 3D reconstruction has advanced rapidly, yet standalone garments remain challenging due to thin-shell geometry, open boundaries, and layered structures. Existing datasets and evaluation protocols provide limited support for systematic evaluation in this setting. We introduce <strong>MagicGarment</strong>, a benchmark for single-image standalone 3D garment reconstruction with 1,518 professionally constructed assets across 17 composite garment types, aligned multimodal annotations, and a unified evaluation protocol. We further establish a garment-aware reference baseline by adapting a pretrained image-to-3D backbone at two levels: Grounded Semantic Refinement (GSR) provides garment-focused visual conditioning, while Flow-Time-Route LoRA (FTR-LoRA) adapts the frozen 3D generative backbone using flow-timestep, token-routing, and expert-load information. Experiments demonstrate MagicGarment's benchmark utility and the effectiveness of garment-aware adaptation.
+          </p>
+        </div>
+      </div>
+    </div>
+    <figure class="project-figure overview-figure">
+      <a href="./static/images/magicgarment-overview.pdf" aria-label="Open MagicGarment overview PDF">
+        <img src="./static/images/magicgarment-overview.png" alt="Overview of MagicGarment">
+      </a>
+    </figure>
+  </div>
+</section>
+
+<hr>
+
+<section class="section" id="method">
+  <div class="container is-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="has-text-centered">
+          <h2 class="title is-3">Method</h2>
+        </div>
+        <figure class="project-figure">
+          <a href="./static/images/magicgarment-network-structure.pdf" aria-label="Open MagicGarment network structure diagram PDF">
+            <img src="./static/images/magicgarment-network-structure.png" alt="MagicGarment network structure diagram">
+          </a>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section" id="dataset">
+  <div class="container is-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="has-text-centered">
+          <h2 class="title is-3">Dataset</h2>
+        </div>
+        <figure class="project-figure">
+          <a href="./static/images/magicgarment-representative-assets.pdf" aria-label="Open MagicGarment representative garment assets PDF">
+            <img src="./static/images/magicgarment-representative-assets.png" alt="Representative garment assets in MagicGarment">
+          </a>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section" id="results">
+  <div class="container is-widescreen">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="has-text-centered">
+          <h2 class="title is-3">More Results</h2>
+        </div>
+        <figure class="project-figure">
+          <a href="./static/images/magicgarment-qualitative-results.pdf" aria-label="Open MagicGarment qualitative results PDF">
+            <img src="./static/images/magicgarment-qualitative-results.png" alt="MagicGarment qualitative experimental diagram">
+          </a>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section" id="meshes">
+  <div class="container is-widescreen">
+    <h2 class="title is-3"><center>Interactable Meshes</center></h2>
+
+    <div class="mesh-grid has-text-centered">
+        <div class="mesh-item">
+          <p>Hanfu</p>
+          <model-viewer src="./static/models_3d/hanfu_082.glb?v=ds3" alt="Hanfu mesh" environment-image="neutral" shadow-intensity="1" exposure="1" camera-controls touch-action="pan-y" auto-rotate ar-status="not-presenting"></model-viewer>
+        </div>
+        <div class="mesh-item">
+          <p>Long-Sleeve Dress</p>
+          <model-viewer src="./static/models_3d/ls_dress_220.glb?v=ds3" alt="Long-sleeve dress mesh" environment-image="neutral" shadow-intensity="1" exposure="1" camera-controls touch-action="pan-y" auto-rotate ar-status="not-presenting"></model-viewer>
+        </div>
+        <div class="mesh-item">
+          <p>Three-Piece Set</p>
+          <model-viewer src="./static/models_3d/three_piece_set_036.glb?v=ds3" alt="Three-piece set mesh" environment-image="neutral" shadow-intensity="1" exposure="1" camera-controls touch-action="pan-y" auto-rotate ar-status="not-presenting"></model-viewer>
+        </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <span class="icon-link">
+        <i class="fas fa-file-pdf"></i>
+      </span>
+      <span class="icon-link">
+        <i class="fab fa-github"></i>
+      </span>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
